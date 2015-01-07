@@ -1,4 +1,8 @@
 $("document").ready(function(){
-    $(".idk").css("background-color", "red");
+    $(".ik").css("background-color", "red");
+    
     $('p:last').css("color", "blue");
+    
+    $('#oneButton').bind('click', alertButtonClick);
 });
+
