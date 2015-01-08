@@ -3,6 +3,10 @@ $("document").ready(function(){
     
     $('p:last').css("color", "blue");
     
-    $('#oneButton').bind('click', alertButtonClick);
+    $("#word").bind('mouseover', mouseOverTrue).bind('mouseout', mouseOverFalse);
 });
 
+function mouseOverTrue()
+{
+    $("#stuff").html("You are on my favorite word");
+}
