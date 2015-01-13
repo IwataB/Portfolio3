@@ -1,19 +1,23 @@
 $("document").ready(function(){
     $(".ik").css("background-color", "red");
     
-    $('p:last').css("color", "blue");
+    $('.mouseText').css("color", "blue");
     
-    $("h1").bind('mouseover', mouseOverMe).bind('mouseout', mouseOutMe);
+    $(".mouseDetect").bind('mouseover', mouseOverMe).bind('mouseout', mouseOutMe);
     
     $("h2").bind('click', click).bind('dblclick', doubleclick);
+    
+    $(".changeToText").bind('click', changeToText);
+    
+    $(".changeToHtml").bind('click', changeToHtml);
 });
 
 function mouseOverMe(){
-    $("p:last").html("Mouse On");
+    $(".mouseText").html("Back off fool!");
 }
 
 function mouseOutMe(){
-    $("p:last").html("Mouse Off");
+    $(".mouseText").html("Come at me bro!");
 }
 
 function click(){
@@ -48,4 +52,12 @@ function clickv4(){
     $("h1").bind('click', clickv5);
     
     $("h1").html("Still listening to websites I see... Get a hobby");
+}
+
+function changeToText(){
+    $(".changed").text("<h2>See my skillz?</h2>");
+}
+
+function changeToHtml(){
+    $(".changed").html("<h2>See my skillz?</h2>");
 }
