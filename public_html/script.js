@@ -1,7 +1,9 @@
 $("document").ready(function(){
     $(".ik").css("background-color", "red");
     
-    $('.mouseText').css("color", "blue");
+    $(".mouseText").css("color", "blue");
+    
+    $("p:last").css("color", "blue");
     
     $(".mouseDetect").bind('mouseover', mouseOverMe).bind('mouseout', mouseOutMe);
     
@@ -10,6 +12,12 @@ $("document").ready(function(){
     $(".changeToText").bind('click', changeToText);
     
     $(".changeToHtml").bind('click', changeToHtml);
+    
+    $(".addPara").bind('click', addPara);
+    
+    $(".removePara").bind('click', removePara);
+    
+    $(".hideThePage").bind('click', hideThePage);
 });
 
 function mouseOverMe(){
@@ -60,4 +68,8 @@ function changeToText(){
 
 function changeToHtml(){
     $(".changed").html("<h2>See my skillz?</h2>");
+}
+
+function hideThePage(){
+    $(".hidden").hide('slide', {}, 2500);
 }
