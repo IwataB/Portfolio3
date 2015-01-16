@@ -1,6 +1,8 @@
 $("document").ready(function(){
     $(".ik").css("background-color", "red");
     
+    //$('body').css('text-align',"center");
+    
     $(".mouseText").css("color", "blue");
     
     $("p:last").css("color", "blue");
@@ -13,19 +15,26 @@ $("document").ready(function(){
     
     $(".changeToHtml").bind('click', changeToHtml);
     
-    $(".addPara").bind('click', addPara);
+    $('#randPara').bind('click',addAPara);
     
-    $(".removePara").bind('click', removePara);
+    $(".addAPara").bind('click', addAPara);
     
-    $(".hideThePage").bind('click', hideThePage);
+    $(".removeAPara").bind('click', removeAPara);
+    
+    $('#hide').bind('click', hideThePage);
+    $('#show').bind('click',showThePage);
+    $('#show').css('visibility','hidden');
+    
+    
+    $('#accordion').accordion({header:"h4"});
 });
 
 function mouseOverMe(){
-    $(".mouseText").html("Back off fool!");
+    $(".mouseText").html("Mouse on");
 }
 
 function mouseOutMe(){
-    $(".mouseText").html("Come at me bro!");
+    $(".mouseText").html("Mouse off");
 }
 
 function click(){
@@ -52,24 +61,28 @@ function clickv3(){
     $("h2").undbind('click').bind('click', clickv4);
 }
 
-function clickv4(){
-    $("h2").html("Click the letter I");
-    
-    $("h2").unbind('click');
-    
-    $("h1").bind('click', clickv5);
-    
-    $("h1").html("Still listening to websites I see... Get a hobby");
-}
-
 function changeToText(){
-    $(".changed").text("<h2>See my skillz?</h2>");
+    $(".changed").text("<h2>See?</h2>");
 }
 
 function changeToHtml(){
-    $(".changed").html("<h2>See my skillz?</h2>");
+    $(".changed").html("<h2>See?</h2>");
 }
 
 function hideThePage(){
-    $(".hidden").hide('slide', {}, 2500);
+    $('#show').css('visibility','visible');
+    $('div').hide('slide',{},2500);
+    $('#show').show('fold',{},2500);
+}
+
+function showThePage(){
+    $('div').show('fold',{},2500);
+    $('#show').hide('puff',{},2500);
+}
+
+function addAPara(){
+    $('#randPara').append('<p>HI!!!!</p>');
+}
+function removeAPara(){
+    $('#rendPara p:last').remove();
 }
