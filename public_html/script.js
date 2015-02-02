@@ -1,21 +1,39 @@
 $("document").ready(function(){
     $(".ik").css("background-color", "red");
     
-    //$('body').css('text-align',"center");
+//Sets background to "red"    
     
     $(".mouseText").css("color", "blue");
     
+//Changes class "mouseText" to color blue
+    
     $("p:last").css("color", "blue");
     
+//Changes last "p" tag to color blue
+    
     $(".mouseDetect").bind('mouseover', mouseOverMe).bind('mouseout', mouseOutMe);
+
+//Detects for mouse hover
     
     $("h2").bind('click', click).bind('dblclick', doubleclick);
     
+//Detects for double click on "h2" tag
+    
     $(".changeToText").bind('click', changeToText);
+    
+//Detects for click on class "changeToText"
     
     $(".changeToHtml").bind('click', changeToHtml);
     
+//Detects for click on class "changeToHtml"
+    
     $('#randPara').bind('click',addAPara);
+    
+//Detects for click on id "randPara"
+
+    $(".truth").bind('click', showtruth);
+    
+//shows the truth
     
     $(".addAPara").bind('click', addAPara);
     
@@ -85,4 +103,8 @@ function addAPara(){
 }
 function removeAPara(){
     $('#rendPara p:last').remove();
+}
+
+function showtruth(){
+    $('.truth').html("<p>I actually hate JQuery a lot still...</p>");
 }
